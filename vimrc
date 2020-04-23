@@ -18,7 +18,6 @@ set shiftwidth=2
 set expandtab
 set number
 set nocompatible
-set path+=**
 
 " configuration taken from https://thoughtbot.com/blog/modern-typescript-and-react-development-in-vim 
 " :CocInstall coc-tsserver coc-json coc-html coc-css
@@ -34,6 +33,8 @@ let g:coc_global_extensions = [
   \ ]
 
 " configuration below taken from standard Coc config: https://github.com/neoclide/coc.nvim
+" with removed lines modyfing imap for <CR> - because it was breaking default
+" enter behaviour 
 
 " TextEdit might fail if hidden is not set.
 set hidden
