@@ -10,6 +10,7 @@ Plug 'peitalin/vim-jsx-typescript'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'jparise/vim-graphql'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 call plug#end()
 
@@ -18,7 +19,10 @@ set shiftwidth=2
 set expandtab
 set number
 set nocompatible
-
+set nowrap 
+set t_Co=256
+set autoindent
+set path+=**
 noremap <CR> o<Esc>
 
 " configuration taken from https://thoughtbot.com/blog/modern-typescript-and-react-development-in-vim 
