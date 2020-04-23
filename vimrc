@@ -18,8 +18,8 @@ set shiftwidth=2
 set expandtab
 set number
 set nocompatible
-nmap <S-Enter> O<Esc>
-nmap <CR> o<Esc>
+
+noremap <CR> o<Esc>
 
 " configuration taken from https://thoughtbot.com/blog/modern-typescript-and-react-development-in-vim 
 " :CocInstall coc-tsserver coc-json coc-html coc-css
