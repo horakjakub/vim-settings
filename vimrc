@@ -1,5 +1,6 @@
 syntax enable
 
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'yuezk/vim-js'
@@ -11,7 +12,8 @@ Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'jparise/vim-graphql'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-
+Plug 'junegunn/fzf.vim'
+" fzf#install() or/and :PlugUpdate afterward maybe required
 call plug#end()
 
 set tabstop=2
@@ -20,10 +22,16 @@ set expandtab
 set number
 set nocompatible
 set nowrap 
-set t_Co=256
 set autoindent
 set path+=**
+
+" this along with .tmux.conf set as // set -g default-terminal "screen-256color"
+set t_Co=256
+set background=dark
+
 noremap <CR> o<Esc>
+noremap <C-p> :Files<Cr>
+noremap <C-g> :Rg <Cr>
 
 " configuration taken from https://thoughtbot.com/blog/modern-typescript-and-react-development-in-vim 
 " :CocInstall coc-tsserver coc-json coc-html coc-css

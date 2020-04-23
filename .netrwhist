@@ -1,12 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =9
-let g:netrw_dirhist_9='/home/jakub/Repos/github-user-search/src/js/pages/SearchPage'
-let g:netrw_dirhist_8='/home/jakub/Repos/github-user-search/src/js/pages/AppContainer'
-let g:netrw_dirhist_7='/home/jakub/Repos/github-user-search/src/js'
-let g:netrw_dirhist_6='/home/jakub/Repos/github-user-search/src/js/components'
-let g:netrw_dirhist_5='/home/jakub/Repos/github-user-search/src/js/components/Autocomplete'
-let g:netrw_dirhist_4='/home/jakub/Repos/github-user-search/src/js/components'
-let g:netrw_dirhist_3='/home/jakub/Repos/github-user-search/src/js'
-let g:netrw_dirhist_2='/home/jakub/Repos/github-user-search/src'
-let g:netrw_dirhist_1='/home/jakub/Repos/github-user-search'
-let g:netrw_dirhist_0='/home/jakub/Repos/github-user-search/src'
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/home/jakub/.zsh-settings'
