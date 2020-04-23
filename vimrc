@@ -26,6 +26,7 @@ set autoindent
 set path+=**
 
 " this along with .tmux.conf set as // set -g default-terminal "screen-256color"
+" to work correctly "set termiguicolors" cannot be used!
 set t_Co=256
 set background=dark
 
