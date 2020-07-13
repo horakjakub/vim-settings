@@ -1,6 +1,4 @@
-syntax enable
-
-
+syntax on
 call plug#begin('~/.vim/plugged')
 
 Plug 'yuezk/vim-js'
@@ -13,6 +11,7 @@ Plug 'jparise/vim-graphql'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'preservim/nerdcommenter'
 " fzf#install() or/and :PlugUpdate afterward maybe required
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
@@ -23,25 +22,43 @@ call plug#end()
 set tabstop=2     " Size of a hard tabstop (ts).
 set shiftwidth=2  " Size of an indentation (sw).
 set expandtab     " Always uses spaces instead of tab characters (et).
-set softtabstop=0 " Number of spaces a <Tab> counts for. When 0, featuer is off (sts).
+set softtabstop=0 " Number of spaces a <Tab> counts for. When 0, feature is off (sts).
 set autoindent    " Copy indent from current line when starting a new line.
 set smarttab      " Inserts blanks on a <Tab> key (as per sw, ts and sts).
+set laststatus=2 
 
 set number
 set nocompatible
 set nowrap 
-set autoindent
 set path+=**
+
 " this along with .tmux.conf set as // set -g default-terminal "screen-256color"
 " to work correctly "set termiguicolors" cannot be used!
+
 set t_Co=256
 set background=dark
 
 noremap <CR> o<Esc>
 noremap <C-p> :Files<Cr>
 noremap <C-g> :Rg <Cr>
-noremap <C-n> :Format <Cr>
-" configuration taken from https://thoughtbot.com/blog/modern-typescript-and-react-development-in-vim 
+noremap <Leader>f :Format <Cr>
+
+command! -nargs=0 Prettier :Coc
+
+" config for ctrl+d multiple selction with Coc 
+nmap <silent> <C-d> <Plug>(coc-cursors-word)
+xmap <silent> <C-d> <Plug>(coc-cursors-range)
+" use normal command like `<leader>xi(`
+nmap <leader>x  <Plug>(coc-cursors-operator)
+
+nmap <expr> <silent> <C-d> <SID>select_current_word()
+function! s:select_current_word()
+  if !get(g:, 'coc_cursors_activated', 0)
+    return "\<Plug>(coc-cursors-word)"
+  endif
+  return "*\<Plug>(coc-cursors-word):nohlsearch\<CR>"
+endfunc
+
 " :CocInstall coc-tsserver coc-json coc-html coc-css
 let g:coc_global_extensions = [
   \ 'coc-tsserver', 
